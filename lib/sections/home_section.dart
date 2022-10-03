@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:joffen_hopland_portfolio/common/config.dart';
+import 'package:joffen_hopland_portfolio/common_widgets/cta_button_1.dart';
+import 'package:joffen_hopland_portfolio/common_widgets/cta_button_2.dart';
 
 class HomeSection extends StatefulWidget {
   const HomeSection({Key? key}) : super(key: key);
@@ -15,7 +17,14 @@ class _HomeSectionState extends State<HomeSection> {
       builder: (context, constraints) {
         if (constraints.maxWidth < 850) {
           return Container(
-            color: Colors.black87,
+            decoration: const BoxDecoration(
+                gradient: LinearGradient(
+                    begin: Alignment.topRight,
+                    end: Alignment.bottomLeft,
+                    colors: [
+                      themeBackgroundColor1,
+                      themeBackgroundColor2,
+                    ])),
             width: double.infinity,
             height: 650,
             child: Column(
@@ -87,7 +96,7 @@ class _HomeSectionState extends State<HomeSection> {
                             ),
                           ],
                         );
-                    }
+                      }
                     }),
                     const Padding(
                       padding: EdgeInsets.symmetric(vertical: 8.0),
@@ -104,45 +113,12 @@ class _HomeSectionState extends State<HomeSection> {
                       padding: const EdgeInsets.only(top: 16.0, bottom: 48),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          ElevatedButton(
-                              style: ElevatedButton.styleFrom(
-                                backgroundColor: themeColor,
-                              ),
-                              onPressed: () {},
-                              child: const SizedBox(
-                                  height: 40,
-                                  width: 120,
-                                  child: Center(
-                                    child: Text(
-                                      "View Projects",
-                                      style: TextStyle(
-                                          color: Colors.black87,
-                                          fontWeight: FontWeight.bold),
-                                    ),
-                                  ))),
-                          const SizedBox(
+                        children: const [
+                          CTAButton1(text: "View Projects"),
+                          SizedBox(
                             width: 32,
                           ),
-                          ElevatedButton(
-                              style: ElevatedButton.styleFrom(
-                                  backgroundColor: Colors.transparent,
-                                  side: const BorderSide(
-                                    width: 2.0,
-                                    color: themeColor,
-                                  )),
-                              onPressed: () {},
-                              child: const SizedBox(
-                                  height: 40,
-                                  width: 120,
-                                  child: Center(
-                                    child: Text(
-                                      "Contact Me",
-                                      style: TextStyle(
-                                          color: themeColor,
-                                          fontWeight: FontWeight.bold),
-                                    ),
-                                  )))
+                          CTAButton2(text: "Contact Me")
                         ],
                       ),
                     )
@@ -153,7 +129,14 @@ class _HomeSectionState extends State<HomeSection> {
           );
         } else {
           return Container(
-            color: Colors.black87,
+            decoration: const BoxDecoration(
+                gradient: LinearGradient(
+                    begin: Alignment.topRight,
+                    end: Alignment.bottomLeft,
+                    colors: [
+                  themeBackgroundColor1,
+                  themeBackgroundColor2,
+                ])),
             width: double.infinity,
             height: 600,
             child: Row(
@@ -201,45 +184,12 @@ class _HomeSectionState extends State<HomeSection> {
                     Padding(
                       padding: const EdgeInsets.symmetric(vertical: 24.0),
                       child: Row(
-                        children: [
-                          ElevatedButton(
-                              style: ElevatedButton.styleFrom(
-                                backgroundColor: themeColor,
-                              ),
-                              onPressed: () {},
-                              child: const SizedBox(
-                                  height: 40,
-                                  width: 120,
-                                  child: Center(
-                                    child: Text(
-                                      "View Projects",
-                                      style: TextStyle(
-                                          color: Colors.black87,
-                                          fontWeight: FontWeight.bold),
-                                    ),
-                                  ))),
-                          const SizedBox(
+                        children: const [
+                          CTAButton1(text: "View Projects"),
+                          SizedBox(
                             width: 32,
                           ),
-                          ElevatedButton(
-                              style: ElevatedButton.styleFrom(
-                                  backgroundColor: Colors.transparent,
-                                  side: const BorderSide(
-                                    width: 2.0,
-                                    color: themeColor,
-                                  )),
-                              onPressed: () {},
-                              child: const SizedBox(
-                                  height: 40,
-                                  width: 120,
-                                  child: Center(
-                                    child: Text(
-                                      "Contact Me",
-                                      style: TextStyle(
-                                          color: themeColor,
-                                          fontWeight: FontWeight.bold),
-                                    ),
-                                  )))
+                          CTAButton2(text: "Contact Me")
                         ],
                       ),
                     )

@@ -19,8 +19,9 @@ class _AppBarItemsState extends State<AppBarItems> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-const SizedBox(width: 1,),
-
+                const SizedBox(
+                  width: 1,
+                ),
                 // TODO: add ankers to menu items
                 Row(
                   children: const [
@@ -38,13 +39,13 @@ const SizedBox(width: 1,),
                         style: TextStyle(color: Colors.white, fontSize: 16),
                       ),
                     ),
-                    Padding(
+                    /*Padding(
                       padding: EdgeInsets.symmetric(horizontal: 16.0),
                       child: Text(
                         "About",
                         style: TextStyle(color: Colors.white, fontSize: 16),
                       ),
-                    ),
+                    ),*/
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: 16.0),
                       child: Text(

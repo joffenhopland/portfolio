@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:joffen_hopland_portfolio/common/config.dart';
-import 'package:joffen_hopland_portfolio/home_section.dart';
+import 'package:joffen_hopland_portfolio/drawers/end_drawer.dart';
+import 'package:joffen_hopland_portfolio/sections/home_section.dart';
+import 'package:joffen_hopland_portfolio/sections/projects_section.dart';
 
 import 'app_bar/app_bar_items.dart';
 
@@ -19,7 +21,7 @@ class HomePage extends StatelessWidget {
           if (constraints.maxWidth < 850) {
             return Scaffold(
                 appBar: AppBar(
-                  backgroundColor: Colors.black87,
+                  backgroundColor: themeBackgroundColor1,
                   leading: const Center(
                     child: Padding(
                       padding: EdgeInsets.only(top: 3, bottom: 3, left: 2, right: 2),                    child: Text(
@@ -32,54 +34,16 @@ class HomePage extends StatelessWidget {
                     ),
                   ),
                 ),
-                endDrawer: Drawer(
-                  backgroundColor: Colors.black87,
-                  child: ListView(
-                    padding: EdgeInsets.zero,
-                    children: [
-                      ListTile(
-                        hoverColor: themeColor,
-                        textColor: Colors.white,
-                        title: Center(child: const Text('Home')),
-                        onTap: () {
-                          // Update the state of the app
-                          // ...
-                          // Then close the drawer
-                          Navigator.pop(context);
-                        },
-                      ),
-                      ListTile(
-                        hoverColor: themeColor,
-                        textColor: Colors.white,
-                        title: Center(child: const Text('Projects')),
-                        onTap: () {
-                          Navigator.pop(context);
-                        },
-                      ),
-                      ListTile(
-                        hoverColor: themeColor,
-                        textColor: Colors.white,
-                        title: Center(child: const Text('About')),
-                        onTap: () {
-                          Navigator.pop(context);
-                        },
-                      ),
-                      ListTile(
-                        hoverColor: themeColor,
-                        textColor: Colors.white,
-                        title: Center(child: const Text('Contact')),
-                        onTap: () {
-                          Navigator.pop(context);
-                        },
-                      ),
-                    ],
-                  ),
-                ),
+                endDrawer: EndDrawer(),
                 body: SingleChildScrollView(
                   child: Column(
                     children: const [
                       HomeSection(),
-                      // ProjectsSection(),
+                      ProjectsSection(),
+                      // TODO: Make about section
+                      // AboutSection(),
+                      // TODO: Make contact section
+                      // ContactSection(),
                     ],
                   ),
                 )
@@ -87,7 +51,7 @@ class HomePage extends StatelessWidget {
           } else {
             return Scaffold(
                 appBar: AppBar(
-                  backgroundColor: Colors.black87,
+                  backgroundColor: themeBackgroundColor1,
                   title: const AppBarItems(),
                   leading: const Center(
                     child: Padding(
@@ -105,6 +69,7 @@ class HomePage extends StatelessWidget {
                   child: Column(
                     children: const [
                       HomeSection(),
+                      ProjectsSection(),
                     ],
                   ),
                 )
