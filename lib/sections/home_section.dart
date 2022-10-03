@@ -19,12 +19,12 @@ class _HomeSectionState extends State<HomeSection> {
           return Container(
             decoration: const BoxDecoration(
                 gradient: LinearGradient(
-                    begin: Alignment.topRight,
-                    end: Alignment.bottomLeft,
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
                     colors: [
-                      themeBackgroundColor1,
-                      themeBackgroundColor2,
-                    ])),
+                  themeBackgroundColor1,
+                  themeBackgroundColor2,
+                ])),
             width: double.infinity,
             height: 650,
             child: Column(
@@ -131,8 +131,8 @@ class _HomeSectionState extends State<HomeSection> {
           return Container(
             decoration: const BoxDecoration(
                 gradient: LinearGradient(
-                    begin: Alignment.topRight,
-                    end: Alignment.bottomLeft,
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
                     colors: [
                   themeBackgroundColor1,
                   themeBackgroundColor2,
