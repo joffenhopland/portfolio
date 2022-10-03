@@ -17,7 +17,7 @@ class HomeSection extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
+              const Text(
                 "Joffen Hopland",
                 style: TextStyle(
                     color: Colors.white,
@@ -25,7 +25,7 @@ class HomeSection extends StatelessWidget {
                     fontWeight: FontWeight.bold),
               ),
               Row(
-                children: [
+                children: const [
                   Text(
                     "Software ",
                     style: TextStyle(
@@ -67,7 +67,9 @@ class HomeSection extends StatelessWidget {
                             child: Center(
                               child: Text(
                                 "View Projects",
-                                style: TextStyle(color: Colors.black87, fontWeight: FontWeight.bold),
+                                style: TextStyle(
+                                    color: Colors.black87,
+                                    fontWeight: FontWeight.bold),
                               ),
                             ))),
                     SizedBox(
@@ -87,7 +89,9 @@ class HomeSection extends StatelessWidget {
                             child: Center(
                               child: Text(
                                 "Contact Me",
-                                style: TextStyle(color: themeColor, fontWeight: FontWeight.bold),
+                                style: TextStyle(
+                                    color: themeColor,
+                                    fontWeight: FontWeight.bold),
                               ),
                             )))
                   ],
@@ -95,17 +99,20 @@ class HomeSection extends StatelessWidget {
               )
             ],
           ),
-          Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              ClipRRect(
-                borderRadius: BorderRadius.circular(300.0),
-                child: Image.asset(
-                  'assets/images/headshot.jpeg',
-                  scale: 3,
+          Flexible(
+            flex: 2,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(300.0),
+                  child: Image.asset(
+                    'assets/images/headshot.jpeg',
+                    scale: 3,
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           )
         ],
       ),

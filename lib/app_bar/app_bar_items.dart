@@ -12,48 +12,58 @@ class _AppBarItemsState extends State<AppBarItems> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: themeColor,
+      // color: Colors.black87,
       child: Container(
         width: double.infinity,
         padding: const EdgeInsets.only(top: 3, bottom: 3, left: 2, right: 2),
         child: Column(
           children: [
             Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Expanded(
-                    child: SingleChildScrollView(
-                  padding: const EdgeInsets.only(top: 2, bottom: 2),
-                  scrollDirection: Axis.horizontal,
-                  clipBehavior: Clip.antiAlias,
-                  child: Material(
-                    color: Colors.black87,
-                    child: const ButtonBar(
-                      children: [
-                        Padding(
-                          padding: EdgeInsets.only(right: 24.0),
-                          child: Text(
-                            "JH",
-                            style: TextStyle(color: Colors.white, fontSize: 22, fontWeight: FontWeight.bold),
-                          ),
-                        ),
-                        // TODO: add ankers to menu items
-                        Text(
-                          "Home",
-                          style: TextStyle(color: Colors.white, fontSize: 14),
-                        ),
-                        Text(
-                          "Projects",
-                          style: TextStyle(color: Colors.white, fontSize: 14),
-                        ),
-                        Text(
-                          "About",
-                          style: TextStyle(color: Colors.white, fontSize: 14),
-                        ),
-                        Text(
-                          "Contact",
-                          style: TextStyle(color: Colors.white, fontSize: 14),
-                        ),
-                        /*IconButton(
+                const Text(
+                  "JH",
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 24,
+                      fontWeight: FontWeight.bold),
+                ),
+
+                // TODO: add ankers to menu items
+                Row(
+                  children: const [
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 16.0),
+                      child: Text(
+                        "Home",
+                        style: TextStyle(color: Colors.white, fontSize: 16),
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 16.0),
+                      child: Text(
+                        "Projects",
+                        style: TextStyle(color: Colors.white, fontSize: 16),
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 16.0),
+                      child: Text(
+                        "About",
+                        style: TextStyle(color: Colors.white, fontSize: 16),
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 16.0),
+                      child: Text(
+                        "Contact",
+                        style: TextStyle(color: Colors.white, fontSize: 16),
+                      ),
+                    ),
+                  ],
+                ),
+
+                /*IconButton(
                           // TODO: Add email address link
                           onPressed: () {},
                           icon: const Icon(Icons
@@ -64,10 +74,6 @@ class _AppBarItemsState extends State<AppBarItems> {
                           'joffenhopland@gmail.com',
                           style: TextStyle(color: Colors.white, fontSize: 14),
                         )*/
-                      ],
-                    ),
-                  ),
-                ))
               ],
             )
           ],
