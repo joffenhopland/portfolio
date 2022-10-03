@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:joffen_hopland_portfolio/common/config.dart';
 
-import 'app_bar/app_bar_items.dart';
 import 'home_page.dart';
 
 void main() {
