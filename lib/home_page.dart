@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:joffen_hopland_portfolio/common/config.dart';
 import 'package:joffen_hopland_portfolio/drawers/end_drawer.dart';
+import 'package:joffen_hopland_portfolio/sections/contact_section.dart';
 import 'package:joffen_hopland_portfolio/sections/home_section.dart';
 import 'package:joffen_hopland_portfolio/sections/projects_section.dart';
 
@@ -70,6 +71,10 @@ class HomePage extends StatelessWidget {
                     children: const [
                       HomeSection(),
                       ProjectsSection(),
+                      // TODO: Make about section
+                      // AboutSection(),
+                      // TODO: Make contact section
+                      ContactSection(),
                     ],
                   ),
                 )
