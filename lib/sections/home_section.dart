@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:joffen_hopland_portfolio/common/config.dart';
 import 'package:joffen_hopland_portfolio/common_widgets/cta_button_2.dart';
 
+import '../common_widgets/cta_button_1.dart';
+
 class HomeSection extends StatefulWidget {
   const HomeSection({Key? key}) : super(key: key);
 
@@ -112,8 +114,8 @@ class _HomeSectionState extends State<HomeSection> {
                       padding: const EdgeInsets.only(top: 16.0, bottom: 48),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
-                        children: const [
-                          // CTAButton1(text: "View Projects"),
+                        children: [
+                          CTAButton1(text: "View Projects", onPressed: () {  },),
                           SizedBox(
                             width: 32,
                           ),
@@ -183,8 +185,8 @@ class _HomeSectionState extends State<HomeSection> {
                     Padding(
                       padding: const EdgeInsets.symmetric(vertical: 24.0),
                       child: Row(
-                        children: const [
-                          // CTAButton1(text: "View Projects"),
+                        children: [
+                          CTAButton1(text: "View Projects", onPressed: () {  },),
                           SizedBox(
                             width: 32,
                           ),

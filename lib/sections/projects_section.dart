@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:joffen_hopland_portfolio/common/config.dart';
 
+import '../common_widgets/cta_button_1.dart';
 import '../common_widgets/cta_button_2.dart';
 
 class ProjectsSection extends StatefulWidget {
@@ -64,13 +65,17 @@ class _ProjectsSectionState extends State<ProjectsSection> {
                           "YelpCamp",
                           style: TextStyle(color: Colors.white),
                         ),
-                        const Text("Text about the project here...",
-                            style: TextStyle(color: Colors.white),
-                          ),
+                        const Text(
+                          "Text about the project here...",
+                          style: TextStyle(color: Colors.white),
+                        ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
-                          children: const [
-                            // CTAButton1(text: "Live Demo"),
+                          children: [
+                            CTAButton1(
+                              text: "Live Demo",
+                              onPressed: () {},
+                            ),
                             SizedBox(
                               width: 32,
                             ),
@@ -101,8 +106,11 @@ class _ProjectsSectionState extends State<ProjectsSection> {
                         ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
-                          children: const [
-                            // CTAButton1(text: "Live Demo"),
+                          children: [
+                            CTAButton1(
+                              text: "Live Demo",
+                              onPressed: () {},
+                            ),
                             SizedBox(
                               width: 32,
                             ),
@@ -159,8 +167,11 @@ class _ProjectsSectionState extends State<ProjectsSection> {
                         ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
-                          children: const [
-                            // CTAButton1(text: "Live Demo"),
+                          children: [
+                            CTAButton1(
+                              text: "Live Demo",
+                              onPressed: () {},
+                            ),
                             SizedBox(
                               width: 32,
                             ),
