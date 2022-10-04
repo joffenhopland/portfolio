@@ -63,7 +63,6 @@ class _ContactSectionState extends State<ContactSection> {
                         fontWeight: FontWeight.bold),
                   ),
                 ),
-                // TODO: Implement url launcher to send email on pressed
                 Padding(
                   padding: EdgeInsets.symmetric(vertical: 8.0),
                   // TODO: change font family to poppins
