@@ -1,5 +1,6 @@
 import 'dart:convert';
-
+import 'package:url_launcher/url_launcher.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:joffen_hopland_portfolio/common_widgets/cta_button_1.dart';
 import 'package:http/http.dart' as http;
@@ -63,16 +64,35 @@ class _ContactSectionState extends State<ContactSection> {
                   ),
                 ),
                 // TODO: Implement url launcher to send email on pressed
-                const Padding(
+                Padding(
                   padding: EdgeInsets.symmetric(vertical: 8.0),
-                  child: Text(
-                    "Feel free to contact me by submitting the form below or \nby sending an email to joffenhopland@gmail.com",
-                    style: TextStyle(
-                      color: Colors.white70,
-                      fontSize: 18,
-                    ),
-                    textAlign: TextAlign.center,
-                  ),
+                  // TODO: change font family to poppins
+                  child: RichText(
+                      textAlign: TextAlign.center,
+                      text: TextSpan(
+                          text:
+                              "Feel free to contact me by submitting the form below or \nby sending an email to ",
+                          style: TextStyle(
+                            color: Colors.white70,
+                            fontSize: 18,
+                          ),
+                          children: [
+                            TextSpan(
+                                text: "joffenhopland@gmail.com",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 18,
+                                ),
+                                recognizer: TapGestureRecognizer()
+                                  ..onTap = () async {
+                                  final toEmail = 'joffenhopland@gmail.com';
+                                    final url = Uri.parse("mailto:$toEmail");
+                                  print(url);
+                                  if (await canLaunchUrl(url)) {
+                                    await launchUrl(url);
+                                  }
+                                  })
+                          ])),
                 ),
                 _form(),
                 _isSendingEmail
