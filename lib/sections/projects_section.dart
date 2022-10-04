@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:joffen_hopland_portfolio/common/config.dart';
 
-import '../common_widgets/cta_button_1.dart';
 import '../common_widgets/cta_button_2.dart';
 
 class ProjectsSection extends StatefulWidget {
@@ -65,7 +64,7 @@ class _ProjectsSectionState extends State<ProjectsSection> {
                           "YelpCamp",
                           style: TextStyle(color: Colors.white),
                         ),
-                        Text("Text about the project here...",
+                        const Text("Text about the project here...",
                             style: TextStyle(color: Colors.white),
                           ),
                         Row(

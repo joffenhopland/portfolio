@@ -35,7 +35,7 @@ class HomePage extends StatelessWidget {
                     ),
                   ),
                 ),
-                endDrawer: EndDrawer(),
+                endDrawer: const EndDrawer(),
                 body: SingleChildScrollView(
                   child: Column(
                     children: const [

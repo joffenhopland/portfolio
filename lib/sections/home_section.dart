@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:joffen_hopland_portfolio/common/config.dart';
-import 'package:joffen_hopland_portfolio/common_widgets/cta_button_1.dart';
 import 'package:joffen_hopland_portfolio/common_widgets/cta_button_2.dart';
 
 class HomeSection extends StatefulWidget {

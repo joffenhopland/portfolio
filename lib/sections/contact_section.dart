@@ -13,6 +13,9 @@ class ContactSection extends StatefulWidget {
 }
 
 class _ContactSectionState extends State<ContactSection> {
+  final _formKey = GlobalKey<FormState>();
+  late bool _isSendingEmail = false;
+
   final controllerName = TextEditingController();
   final controllerEmail = TextEditingController();
   final controllerSubject = TextEditingController();
@@ -59,6 +62,7 @@ class _ContactSectionState extends State<ContactSection> {
                         fontWeight: FontWeight.bold),
                   ),
                 ),
+                // TODO: Implement url launcher to send email on pressed
                 const Padding(
                   padding: EdgeInsets.symmetric(vertical: 8.0),
                   child: Text(
@@ -70,37 +74,40 @@ class _ContactSectionState extends State<ContactSection> {
                     textAlign: TextAlign.center,
                   ),
                 ),
-                buildTextField(title: 'Name', controller: controllerName),
-                buildTextField(title: 'Email', controller: controllerEmail),
-                buildTextField(title: 'Subject', controller: controllerSubject),
-                buildTextField(
-                    title: 'Message',
-                    controller: controllerMessage,
-                    maxLines: 8),
-                // TODO: Implement url launcher to send email on pressed
-                Padding(
-                  padding: const EdgeInsets.all(24.0),
-                  child: CTAButton1(
-                    text: 'Send',
-                    onPressed: () {
-                      sendEmail(
-                          name: controllerName.text,
-                          email: controllerEmail.text,
-                          subject: controllerSubject.text,
-                          message: controllerMessage.text);
-                      controllerName.clear();
-                      controllerEmail.clear();
-                      controllerSubject.clear();
-                      controllerMessage.clear();
-
-                      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                        content: const Text('Email sent successfully!'),
-                        action:
-                            SnackBarAction(label: 'Success', onPressed: () {}),
-                      ));
-                    },
-                  ),
-                ),
+                _form(),
+                _isSendingEmail
+                    ? Padding(
+                        padding: const EdgeInsets.all(24.0),
+                        child: ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: themeColor.withOpacity(0.5),
+                            ),
+                            onPressed: () {},
+                            child: const SizedBox(
+                                height: 40,
+                                width: 120,
+                                child: Center(
+                                    child: CircularProgressIndicator(
+                                  color: Colors.white,
+                                )))),
+                      )
+                    : Padding(
+                        padding: const EdgeInsets.all(24.0),
+                        child: CTAButton1(
+                          // isSending: _isSendingEmail,
+                          text: 'Send',
+                          onPressed: () {
+                            if (_formKey.currentState!.validate()) {
+                              _isSendingEmail = true;
+                              sendEmail(
+                                  name: controllerName.text,
+                                  email: controllerEmail.text,
+                                  subject: controllerSubject.text,
+                                  message: controllerMessage.text);
+                            }
+                          },
+                        ),
+                      ),
               ],
             ));
       }
@@ -113,6 +120,9 @@ class _ContactSectionState extends State<ContactSection> {
     required String subject,
     required String message,
   }) async {
+    setState(() {
+      _isSendingEmail = true;
+    });
     const serviceId = 'service_xgzmr48';
     const templateId = 'template_w9gbgv9';
     const userId = 'b3MguBJS3sriGqOc5';
@@ -135,15 +145,54 @@ class _ContactSectionState extends State<ContactSection> {
         }
       }),
     );
-    // print(response.body);
+    if (response.statusCode == 200) {
+      print('Response code: ${response.statusCode}');
+      print('Response code: ${response.body}');
+      controllerName.clear();
+      controllerEmail.clear();
+      controllerSubject.clear();
+      controllerMessage.clear();
+
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('Email sent successfully!'),
+          backgroundColor: Colors.green,
+        ),
+      );
+    } else {
+      print('Response code: ${response.statusCode}');
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text('Error: ${response.statusCode}. Email not sent!'),
+          backgroundColor: Colors.amber,
+        ),
+      );
+    }
+    setState(() {
+      _isSendingEmail = false;
+    });
   }
 
-  Widget buildTextField({
+  Widget _form() {
+    return Form(
+        key: _formKey,
+        child: Column(
+          children: [
+            _buildTextField(title: 'Name', controller: controllerName),
+            _buildTextField(title: 'Email', controller: controllerEmail),
+            _buildTextField(title: 'Subject', controller: controllerSubject),
+            _buildTextField(
+                title: 'Message', controller: controllerMessage, maxLines: 8),
+          ],
+        ));
+  }
+
+  Widget _buildTextField({
     required String title,
     required TextEditingController controller,
     int maxLines = 1,
   }) =>
-      Container(
+      SizedBox(
         width: 800,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -152,13 +201,19 @@ class _ContactSectionState extends State<ContactSection> {
               padding: const EdgeInsets.symmetric(vertical: 8.0),
               child: Text(
                 title,
-                style: TextStyle(
+                style: const TextStyle(
                     color: Colors.white,
                     fontSize: 20,
                     fontWeight: FontWeight.bold),
               ),
             ),
-            TextField(
+            TextFormField(
+              validator: (value) {
+                if (value == null || value.isEmpty) {
+                  return 'Please enter some text';
+                }
+                return null;
+              },
               maxLines: maxLines,
               cursorColor: themeColor,
               controller: controller,
@@ -168,7 +223,7 @@ class _ContactSectionState extends State<ContactSection> {
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(5),
                 ),
-                focusedBorder: OutlineInputBorder(
+                focusedBorder: const OutlineInputBorder(
                     borderSide: BorderSide(color: themeColor)),
               ),
             )
