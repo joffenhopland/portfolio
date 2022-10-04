@@ -114,7 +114,7 @@ class _HomeSectionState extends State<HomeSection> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: const [
-                          CTAButton1(text: "View Projects"),
+                          // CTAButton1(text: "View Projects"),
                           SizedBox(
                             width: 32,
                           ),
@@ -185,7 +185,7 @@ class _HomeSectionState extends State<HomeSection> {
                       padding: const EdgeInsets.symmetric(vertical: 24.0),
                       child: Row(
                         children: const [
-                          CTAButton1(text: "View Projects"),
+                          // CTAButton1(text: "View Projects"),
                           SizedBox(
                             width: 32,
                           ),

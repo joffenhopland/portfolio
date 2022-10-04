@@ -71,7 +71,7 @@ class _ProjectsSectionState extends State<ProjectsSection> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: const [
-                            CTAButton1(text: "Live Demo"),
+                            // CTAButton1(text: "Live Demo"),
                             SizedBox(
                               width: 32,
                             ),
@@ -103,7 +103,7 @@ class _ProjectsSectionState extends State<ProjectsSection> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: const [
-                            CTAButton1(text: "Live Demo"),
+                            // CTAButton1(text: "Live Demo"),
                             SizedBox(
                               width: 32,
                             ),
@@ -161,7 +161,7 @@ class _ProjectsSectionState extends State<ProjectsSection> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: const [
-                            CTAButton1(text: "Live Demo"),
+                            // CTAButton1(text: "Live Demo"),
                             SizedBox(
                               width: 32,
                             ),

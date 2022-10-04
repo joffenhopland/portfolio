@@ -1,6 +1,8 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:joffen_hopland_portfolio/common_widgets/cta_button_1.dart';
-
+import 'package:http/http.dart' as http;
 import '../common/config.dart';
 
 class ContactSection extends StatefulWidget {
@@ -78,12 +80,62 @@ class _ContactSectionState extends State<ContactSection> {
                 // TODO: Implement url launcher to send email on pressed
                 Padding(
                   padding: const EdgeInsets.all(24.0),
-                  child: CTAButton1(text: 'Send'),
+                  child: CTAButton1(
+                    text: 'Send',
+                    onPressed: () {
+                      sendEmail(
+                          name: controllerName.text,
+                          email: controllerEmail.text,
+                          subject: controllerSubject.text,
+                          message: controllerMessage.text);
+                      controllerName.clear();
+                      controllerEmail.clear();
+                      controllerSubject.clear();
+                      controllerMessage.clear();
+
+                      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                        content: const Text('Email sent successfully!'),
+                        action:
+                            SnackBarAction(label: 'Success', onPressed: () {}),
+                      ));
+                    },
+                  ),
                 ),
               ],
             ));
       }
     });
+  }
+
+  Future sendEmail({
+    required String name,
+    required String email,
+    required String subject,
+    required String message,
+  }) async {
+    const serviceId = 'service_xgzmr48';
+    const templateId = 'template_w9gbgv9';
+    const userId = 'b3MguBJS3sriGqOc5';
+
+    final url = Uri.parse('https://api.emailjs.com/api/v1.0/email/send');
+    final response = await http.post(
+      url,
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: json.encode({
+        'service_id': serviceId,
+        'template_id': templateId,
+        'user_id': userId,
+        'template_params': {
+          'user_name': name,
+          'user_email': email,
+          'user_subject': subject,
+          'user_message': message,
+        }
+      }),
+    );
+    // print(response.body);
   }
 
   Widget buildTextField({
