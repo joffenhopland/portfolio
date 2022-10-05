@@ -102,7 +102,7 @@ class _HomeSectionState extends State<HomeSection> {
                     const Padding(
                       padding: EdgeInsets.symmetric(vertical: 8.0),
                       child: Text(
-                        "I specialize in web, iOS and Android web development",
+                        "I specialize in web, iOS and Android app development",
                         style: TextStyle(
                           color: Colors.white70,
                           fontSize: 16,
