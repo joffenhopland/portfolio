@@ -3,8 +3,10 @@ import 'package:flutter/material.dart';
 import '../common/config.dart';
 
 class CTAButton2 extends StatefulWidget {
-  const CTAButton2({Key? key, required this.text}) : super(key: key);
+  CTAButton2({Key? key, required this.text, required this.onPressed}) : super(key: key);
   final String text;
+  void Function() onPressed;
+
 
   @override
   State<CTAButton2> createState() => _CTAButton2State();
@@ -20,7 +22,7 @@ class _CTAButton2State extends State<CTAButton2> {
               width: 2.0,
               color: themeColor,
             )),
-        onPressed: () {},
+        onPressed: widget.onPressed,
         child: SizedBox(
             height: 40,
             width: 120,

@@ -64,27 +64,27 @@ class _ContactSectionState extends State<ContactSection> {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.symmetric(vertical: 8.0),
+                  padding: const EdgeInsets.symmetric(vertical: 8.0),
                   // TODO: change font family to poppins
                   child: RichText(
                       textAlign: TextAlign.center,
                       text: TextSpan(
                           text:
                               "Feel free to contact me by submitting the form below or \nby sending an email to ",
-                          style: TextStyle(
+                          style: const TextStyle(
                             color: Colors.white70,
                             fontSize: 18,
                           ),
                           children: [
                             TextSpan(
                                 text: "joffenhopland@gmail.com",
-                                style: TextStyle(
+                                style: const TextStyle(
                                   color: Colors.white,
                                   fontSize: 18,
                                 ),
                                 recognizer: TapGestureRecognizer()
                                   ..onTap = () async {
-                                  final toEmail = 'joffenhopland@gmail.com';
+                                  const toEmail = 'joffenhopland@gmail.com';
                                     final url = Uri.parse("mailto:$toEmail");
                                   print(url);
                                   if (await canLaunchUrl(url)) {

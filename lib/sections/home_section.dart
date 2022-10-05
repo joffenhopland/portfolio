@@ -116,10 +116,10 @@ class _HomeSectionState extends State<HomeSection> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           CTAButton1(text: "View Projects", onPressed: () {  },),
-                          SizedBox(
+                          const SizedBox(
                             width: 32,
                           ),
-                          CTAButton2(text: "Contact Me")
+                          CTAButton2(text: "Contact Me", onPressed: () {  },)
                         ],
                       ),
                     )
@@ -187,10 +187,10 @@ class _HomeSectionState extends State<HomeSection> {
                       child: Row(
                         children: [
                           CTAButton1(text: "View Projects", onPressed: () {  },),
-                          SizedBox(
+                          const SizedBox(
                             width: 32,
                           ),
-                          CTAButton2(text: "Contact Me")
+                          CTAButton2(text: "Contact Me", onPressed: () {  },)
                         ],
                       ),
                     )
