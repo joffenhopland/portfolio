@@ -150,7 +150,7 @@ class _ProjectsSectionState extends State<ProjectsSection> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         const Text(
-                          "YelpCamp",
+                          "Tip calculator",
                           style: TextStyle(color: Colors.white),
                         ),
                         const Text(
@@ -211,7 +211,7 @@ class _ProjectsSectionState extends State<ProjectsSection> {
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
                         const Text(
-                          "YelpCamp",
+                          "CMS",
                           style: TextStyle(color: Colors.white),
                         ),
                         const Text(
