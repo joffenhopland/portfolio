@@ -149,39 +149,74 @@ class _ProjectsSectionState extends State<ProjectsSection> {
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        const Text(
-                          "Tip calculator",
-                          style: TextStyle(color: Colors.white),
+                        const Padding(
+                          padding: EdgeInsets.only(bottom: 4.0),
+                          child: Text(
+                            "Easy Tip Calculator",
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 22),
+                          ),
                         ),
                         const Text(
-                          "Text about the project here...",
-                          style: TextStyle(color: Colors.white),
+                          "The Easy Tip Calculator is a cross platform web, iOS and Android application \nwritten in Flutter. It lets the user calculate the total tip, total bill, tip per person, \nand total per person by typing in the bill amount, \nnumber of people to split the bill and the desired tip percentage.",
+                          style: TextStyle(
+                              color: Colors.white, fontSize: 16, height: 1.6),
+                          textAlign: TextAlign.start,
                         ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            CTAButton1(
-                              text: "Live Demo",
-                              onPressed: () {},
-                            ),
-                            const SizedBox(
-                              width: 32,
-                            ),
-                            CTAButton2(text: "View the code", onPressed: () {  },)
-                          ],
+                        Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 16.0),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              CTAButton1(
+                                text: "Live Demo",
+                                onPressed: () async {
+                                  final url = Uri.parse(
+                                      "https://tip-calculator.codemagic.app/#/");
+                                  if (await canLaunchUrl(url)) {
+                                    await launchUrl(url);
+                                  }
+                                },
+                              ),
+                              const SizedBox(
+                                width: 32,
+                              ),
+                              CTAButton2(
+                                text: "View the code",
+                                onPressed: () async {
+                                  final url = Uri.parse(
+                                      "https://github.com/joffenhopland/tip-calculator");
+                                  if (await canLaunchUrl(url)) {
+                                    await launchUrl(url);
+                                  }
+                                },
+                              )
+                            ],
+                          ),
                         ),
                       ],
                     ),
                     Column(
                       children: [
-                        Container(
-                          width: 300,
-                          height: 300,
-                          color: Colors.blue,
+                        ClipRRect(
+                          borderRadius: BorderRadius.circular(10.0),
+                          child: Image.asset(
+                            'assets/images/tip-calc-mockup.jpeg',
+                            scale: 3,
+                          ),
                         ),
-                        const Text(
-                          "HTML, CSS, Javacript, MongoDb osv...",
-                          style: TextStyle(color: themeColor),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 8.0),
+                          child: Row(
+                            children: const [
+                              Padding(
+                                padding: EdgeInsets.symmetric(horizontal: 4.0),
+                                child: TextContainer(text: "  Flutter  "),
+                              ),
+                            ],
+                          ),
                         )
                       ],
                     ),
@@ -196,40 +231,87 @@ class _ProjectsSectionState extends State<ProjectsSection> {
                   children: [
                     Column(
                       children: [
-                        Container(
-                          width: 300,
-                          height: 300,
-                          color: Colors.blue,
+                        ClipRRect(
+                          borderRadius: BorderRadius.circular(10.0),
+                          child: Image.asset(
+                            'assets/images/cms-mockup.jpeg',
+                            scale: 3,
+                          ),
                         ),
-                        const Text(
-                          "HTML, CSS, Javacript, MongoDb osv...",
-                          style: TextStyle(color: themeColor),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 8.0),
+                          child: Row(
+                            children: const [
+                              Padding(
+                                padding: EdgeInsets.only(right: 4.0),
+                                child: TextContainer(text: "  Python  "),
+                              ),
+                              Padding(
+                                padding: EdgeInsets.symmetric(horizontal: 4.0),
+                                child: TextContainer(text: "  Flask  "),
+                              ),
+                              Padding(
+                                padding: EdgeInsets.symmetric(horizontal: 4.0),
+                                child: TextContainer(text: "  MySQL  "),
+                              ),
+                              Padding(
+                                padding: EdgeInsets.only(left: 4.0),
+                                child: TextContainer(text: "  MariaDB  "),
+                              ),
+                            ],
+                          ),
                         )
                       ],
                     ),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
-                        const Text(
-                          "CMS",
-                          style: TextStyle(color: Colors.white),
+                        const Padding(
+                          padding: EdgeInsets.only(bottom: 4.0),
+                          child: Text(
+                            "Content Management System",
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 22),
+                          ),
                         ),
                         const Text(
-                          "Text about the project here...",
-                          style: TextStyle(color: Colors.white),
+                          "This CMS lets users create folders, upload, edit and delete files, \npost and delete comments, categorize files based on tags, \nand search for files. When uploading a file, the user can decide whether \nto make the file accessible for all, or only registered users. Email verification \nis used to verify users registering for an account. The focus on this project \nwas database design, backend development, security and authentication. ",
+                          style: TextStyle(
+                              color: Colors.white, fontSize: 16, height: 1.6),
+                          textAlign: TextAlign.end,
                         ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            CTAButton1(
-                              text: "Live Demo",
-                              onPressed: () {},
-                            ),
-                            const SizedBox(
-                              width: 32,
-                            ),
-                            CTAButton2(text: "View the code", onPressed: () {  },)
-                          ],
+                        Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 16.0),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              CTAButton1(
+                                text: "Live Demo",
+                                onPressed: () async {
+                                  final url = Uri.parse(
+                                      "https://kark.uit.no/~kpe144/flask_prosjekt/home");
+                                  if (await canLaunchUrl(url)) {
+                                    await launchUrl(url);
+                                  }
+                                },
+                              ),
+                              const SizedBox(
+                                width: 32,
+                              ),
+                              CTAButton2(
+                                text: "View the code",
+                                onPressed: () async {
+                                  final url = Uri.parse(
+                                      "https://github.com/joffenhopland/CMS---Python-Flask");
+                                  if (await canLaunchUrl(url)) {
+                                    await launchUrl(url);
+                                  }
+                                },
+                              )
+                            ],
+                          ),
                         ),
                       ],
                     )
