@@ -24,113 +24,99 @@ class _ContactSectionState extends State<ContactSection> {
 
   @override
   Widget build(BuildContext context) {
-    return LayoutBuilder(builder: (context, constraints) {
-      if (constraints.maxWidth < 850) {
-        return Container(
-          decoration: const BoxDecoration(
-              gradient: LinearGradient(
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                  colors: [
-                themeBackgroundColor1,
-                themeBackgroundColor2,
-              ])),
-          width: double.infinity,
-          height: 1000,
-          child: const Text("Mobile"),
-        );
-      } else {
-        return Container(
-            decoration: const BoxDecoration(
-                gradient: LinearGradient(
-                    begin: Alignment.topRight,
-                    end: Alignment.bottomLeft,
-                    colors: [
-                  themeBackgroundColor1,
-                  themeBackgroundColor2,
-                ])),
-            width: double.infinity,
-            height: 1000,
-            child: Column(
-              children: [
-                const Padding(
-                  padding: EdgeInsets.all(32.0),
-                  child: Text(
-                    "Contact me",
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 48,
-                        fontWeight: FontWeight.bold),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 8.0),
-                  // TODO: change font family to poppins
-                  child: RichText(
-                      textAlign: TextAlign.center,
-                      text: TextSpan(
-                          text:
-                              "Feel free to contact me by submitting the form below or \nby sending an email to ",
-                          style: const TextStyle(
-                            color: Colors.white70,
-                            fontSize: 18,
-                          ),
-                          children: [
-                            TextSpan(
-                                text: "joffenhopland@gmail.com",
-                                style: const TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 18,
-                                ),
-                                recognizer: TapGestureRecognizer()
-                                  ..onTap = () async {
+    return Container(
+        decoration: const BoxDecoration(
+            gradient: LinearGradient(
+                begin: Alignment.topRight,
+                end: Alignment.bottomLeft,
+                colors: [
+              themeBackgroundColor1,
+              themeBackgroundColor2,
+            ])),
+        width: double.infinity,
+        height: 1000,
+        child: Column(
+          children: [
+            const Padding(
+              padding: EdgeInsets.all(32.0),
+              child: Text(
+                "Contact me",
+                style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 48,
+                    fontWeight: FontWeight.bold),
+              ),
+            ),
+            Padding(
+              padding:
+                  const EdgeInsets.symmetric(vertical: 8.0, horizontal: 40),
+              // TODO: change font family to poppins
+              child: SizedBox(
+                width: 600,
+                child: RichText(
+                    textAlign: TextAlign.center,
+                    text: TextSpan(
+                        text:
+                            "Feel free to contact me by submitting the form below or by sending an email to ",
+                        style: const TextStyle(
+                          color: Colors.white70,
+                          fontSize: 18,
+                        ),
+                        children: [
+                          TextSpan(
+                              text: "joffenhopland@gmail.com",
+                              style: const TextStyle(
+                                color: Colors.white,
+                                fontSize: 18,
+                              ),
+                              recognizer: TapGestureRecognizer()
+                                ..onTap = () async {
                                   const toEmail = 'joffenhopland@gmail.com';
-                                    final url = Uri.parse("mailto:$toEmail");
+                                  final url = Uri.parse("mailto:$toEmail");
                                   print(url);
                                   if (await canLaunchUrl(url)) {
                                     await launchUrl(url);
                                   }
-                                  })
-                          ])),
-                ),
-                _form(),
-                _isSendingEmail
-                    ? Padding(
-                        padding: const EdgeInsets.all(24.0),
-                        child: ElevatedButton(
-                            style: ElevatedButton.styleFrom(
-                              backgroundColor: themeColor.withOpacity(0.5),
-                            ),
-                            onPressed: () {},
-                            child: const SizedBox(
-                                height: 40,
-                                width: 120,
-                                child: Center(
-                                    child: CircularProgressIndicator(
-                                  color: Colors.white,
-                                )))),
-                      )
-                    : Padding(
-                        padding: const EdgeInsets.all(24.0),
-                        child: CTAButton1(
-                          // isSending: _isSendingEmail,
-                          text: 'Send',
-                          onPressed: () {
-                            if (_formKey.currentState!.validate()) {
-                              _isSendingEmail = true;
-                              sendEmail(
-                                  name: controllerName.text,
-                                  email: controllerEmail.text,
-                                  subject: controllerSubject.text,
-                                  message: controllerMessage.text);
-                            }
-                          },
+                                })
+                        ])),
+              ),
+            ),
+            _form(),
+            _isSendingEmail
+                ? Padding(
+                    padding: const EdgeInsets.all(24.0),
+                    child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: themeColor.withOpacity(0.5),
                         ),
-                      ),
-              ],
-            ));
-      }
-    });
+                        onPressed: () {},
+                        child: const SizedBox(
+                            height: 40,
+                            width: 120,
+                            child: Center(
+                                child: CircularProgressIndicator(
+                              color: Colors.white,
+                            )))),
+                  )
+                : Padding(
+                    padding: const EdgeInsets.all(24.0),
+                    child: CTAButton1(
+                      // isSending: _isSendingEmail,
+                      text: 'Send',
+                      onPressed: () {
+                        if (_formKey.currentState!.validate()) {
+                          _isSendingEmail = true;
+                          sendEmail(
+                              name: controllerName.text,
+                              email: controllerEmail.text,
+                              subject: controllerSubject.text,
+                              message: controllerMessage.text);
+                        }
+                      },
+                    ),
+                  ),
+          ],
+        ));
   }
 
   Future sendEmail({
@@ -195,14 +181,17 @@ class _ContactSectionState extends State<ContactSection> {
   Widget _form() {
     return Form(
         key: _formKey,
-        child: Column(
-          children: [
-            _buildTextField(title: 'Name', controller: controllerName),
-            _buildTextField(title: 'Email', controller: controllerEmail),
-            _buildTextField(title: 'Subject', controller: controllerSubject),
-            _buildTextField(
-                title: 'Message', controller: controllerMessage, maxLines: 8),
-          ],
+        child: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 40),
+          child: Column(
+            children: [
+              _buildTextField(title: 'Name', controller: controllerName),
+              _buildTextField(title: 'Email', controller: controllerEmail),
+              _buildTextField(title: 'Subject', controller: controllerSubject),
+              _buildTextField(
+                  title: 'Message', controller: controllerMessage, maxLines: 8),
+            ],
+          ),
         ));
   }
 

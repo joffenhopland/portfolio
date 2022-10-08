@@ -324,7 +324,7 @@ class _ProjectsSectionState extends State<ProjectsSection> {
           child: Column(
             children: [
               const Padding(
-                padding: EdgeInsets.all(32.0),
+                padding: EdgeInsets.all(40.0),
                 child: Text(
                   "Projects",
                   style: TextStyle(
@@ -334,9 +334,9 @@ class _ProjectsSectionState extends State<ProjectsSection> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.all(80.0),
+                padding: const EdgeInsets.symmetric(vertical: 40, horizontal: 80.0),
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Column(

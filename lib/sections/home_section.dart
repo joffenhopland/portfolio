@@ -141,7 +141,7 @@ class _HomeSectionState extends State<HomeSection> {
             width: double.infinity,
             height: 600,
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 Column(
                   mainAxisAlignment: MainAxisAlignment.center,

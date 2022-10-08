@@ -44,7 +44,7 @@ class HomePage extends StatelessWidget {
                       // TODO: Make about section
                       // AboutSection(),
                       // TODO: Make contact section
-                      // ContactSection(),
+                      ContactSection(),
                     ],
                   ),
                 )
