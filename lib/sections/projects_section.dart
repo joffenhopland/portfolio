@@ -28,7 +28,6 @@ class _ProjectsSectionState extends State<ProjectsSection> {
         return Container(
           color: themeBackgroundColor1,
           width: double.infinity,
-          height: 1500,
           child: Column(
             children: [
               const Padding(
@@ -42,7 +41,7 @@ class _ProjectsSectionState extends State<ProjectsSection> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.all(32.0),
+                padding: const EdgeInsets.all(80.0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -85,118 +84,134 @@ class _ProjectsSectionState extends State<ProjectsSection> {
                         )
                       ],
                     ),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.end,
-                      children: [
-                        const Padding(
-                          padding: EdgeInsets.only(bottom: 4.0),
-                          child: Text(
-                            "YelpCamp",
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 22),
+                    SizedBox(
+                      width: 20,
+                    ),
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        children: [
+                          const Padding(
+                            padding: EdgeInsets.only(bottom: 4.0),
+                            child: Text(
+                              "YelpCamp",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 22),
+                            ),
                           ),
-                        ),
-                        const Text(
-                          "YelpCamp is website that lets users create and review campgrounds. \nIn order to review, create, edit or delete a campground, the user needs to \nlog in or create an account. Authentication is handled using Passport.js. ",
-                          style: TextStyle(
-                              color: Colors.white, fontSize: 16, height: 1.6),
-                          textAlign: TextAlign.end,
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 16.0),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              CTAButton1(
-                                text: "Live Demo",
-                                onPressed: () async {
-                                  final url = Uri.parse(
-                                      "https://shrouded-castle-36385.herokuapp.com/");
-                                  if (await canLaunchUrl(url)) {
-                                    await launchUrl(url);
-                                  }
-                                },
-                              ),
-                              const SizedBox(
-                                width: 32,
-                              ),
-                              CTAButton2(
-                                text: "View the code",
-                                onPressed: () async {
-                                  final url = Uri.parse(
-                                      "https://github.com/joffenhopland/yelpcamp.git");
-                                  if (await canLaunchUrl(url)) {
-                                    await launchUrl(url);
-                                  }
-                                },
-                              )
-                            ],
+                          SizedBox(
+                            width: 600,
+                            child: const Text(
+                              "YelpCamp is website that lets users create and review campgrounds. In order to review, create, edit or delete a campground, the user needs to log in or create an account. Authentication is handled using Passport.js.",
+                              style: TextStyle(
+                                  color: Colors.white, fontSize: 16, height: 1.6),
+                              textAlign: TextAlign.end,
+                            ),
                           ),
-                        ),
-                      ],
+                          Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 16.0),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              children: [
+                                CTAButton1(
+                                  text: "Live Demo",
+                                  onPressed: () async {
+                                    final url = Uri.parse(
+                                        "https://shrouded-castle-36385.herokuapp.com/");
+                                    if (await canLaunchUrl(url)) {
+                                      await launchUrl(url);
+                                    }
+                                  },
+                                ),
+                                const SizedBox(
+                                  width: 32,
+                                ),
+                                CTAButton2(
+                                  text: "View the code",
+                                  onPressed: () async {
+                                    final url = Uri.parse(
+                                        "https://github.com/joffenhopland/yelpcamp.git");
+                                    if (await canLaunchUrl(url)) {
+                                      await launchUrl(url);
+                                    }
+                                  },
+                                )
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
                     )
                   ],
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.all(32.0),
+                padding: const EdgeInsets.all(80.0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        const Padding(
-                          padding: EdgeInsets.only(bottom: 4.0),
-                          child: Text(
-                            "Easy Tip Calculator",
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 22),
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const Padding(
+                            padding: EdgeInsets.only(bottom: 4.0),
+                            child: Text(
+                              "Easy Tip Calculator",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 22),
+                            ),
                           ),
-                        ),
-                        const Text(
-                          "The Easy Tip Calculator is a cross platform web, iOS and Android application \nwritten in Flutter. It lets the user calculate the total tip, total bill, tip per person, \nand total per person by typing in the bill amount, \nnumber of people to split the bill and the desired tip percentage.",
-                          style: TextStyle(
-                              color: Colors.white, fontSize: 16, height: 1.6),
-                          textAlign: TextAlign.start,
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 16.0),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              CTAButton1(
-                                text: "Live Demo",
-                                onPressed: () async {
-                                  final url = Uri.parse(
-                                      "https://tip-calculator.codemagic.app/#/");
-                                  if (await canLaunchUrl(url)) {
-                                    await launchUrl(url);
-                                  }
-                                },
-                              ),
-                              const SizedBox(
-                                width: 32,
-                              ),
-                              CTAButton2(
-                                text: "View the code",
-                                onPressed: () async {
-                                  final url = Uri.parse(
-                                      "https://github.com/joffenhopland/tip-calculator");
-                                  if (await canLaunchUrl(url)) {
-                                    await launchUrl(url);
-                                  }
-                                },
-                              )
-                            ],
+                          SizedBox(
+                            width: 600,
+                            child: const Text(
+                              "The Easy Tip Calculator is a cross platform web, iOS and Android application written in Flutter. It lets the user calculate the total tip, total bill, tip per person, and total per person by typing in the bill amount, number of people to split the bill and the desired tip percentage.",
+                              style: TextStyle(
+                                  color: Colors.white, fontSize: 16, height: 1.6),
+                              textAlign: TextAlign.start,
+                            ),
                           ),
-                        ),
-                      ],
+                          Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 16.0),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                CTAButton1(
+                                  text: "Live Demo",
+                                  onPressed: () async {
+                                    final url = Uri.parse(
+                                        "https://tip-calculator.codemagic.app/#/");
+                                    if (await canLaunchUrl(url)) {
+                                      await launchUrl(url);
+                                    }
+                                  },
+                                ),
+                                const SizedBox(
+                                  width: 32,
+                                ),
+                                CTAButton2(
+                                  text: "View the code",
+                                  onPressed: () async {
+                                    final url = Uri.parse(
+                                        "https://github.com/joffenhopland/tip-calculator");
+                                    if (await canLaunchUrl(url)) {
+                                      await launchUrl(url);
+                                    }
+                                  },
+                                )
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    SizedBox(
+                      width: 20,
                     ),
                     Column(
                       children: [
@@ -224,7 +239,7 @@ class _ProjectsSectionState extends State<ProjectsSection> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.all(32.0),
+                padding: const EdgeInsets.all(80.0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -263,57 +278,65 @@ class _ProjectsSectionState extends State<ProjectsSection> {
                         )
                       ],
                     ),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.end,
-                      children: [
-                        const Padding(
-                          padding: EdgeInsets.only(bottom: 4.0),
-                          child: Text(
-                            "Content Management System",
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 22),
+                    SizedBox(
+                      width: 20,
+                    ),
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        children: [
+                          const Padding(
+                            padding: EdgeInsets.only(bottom: 4.0),
+                            child: Text(
+                              "Content Management System",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 22),
+                            ),
                           ),
-                        ),
-                        const Text(
-                          "This CMS lets users create folders, upload, edit and delete files, \npost and delete comments, categorize files based on tags, \nand search for files. When uploading a file, the user can decide whether \nto make the file accessible for all, or only registered users. Email verification \nis used to verify users registering for an account. The focus on this project \nwas database design, backend development, security and authentication. ",
-                          style: TextStyle(
-                              color: Colors.white, fontSize: 16, height: 1.6),
-                          textAlign: TextAlign.end,
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 16.0),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              CTAButton1(
-                                text: "Live Demo",
-                                onPressed: () async {
-                                  final url = Uri.parse(
-                                      "https://kark.uit.no/~kpe144/flask_prosjekt/home");
-                                  if (await canLaunchUrl(url)) {
-                                    await launchUrl(url);
-                                  }
-                                },
-                              ),
-                              const SizedBox(
-                                width: 32,
-                              ),
-                              CTAButton2(
-                                text: "View the code",
-                                onPressed: () async {
-                                  final url = Uri.parse(
-                                      "https://github.com/joffenhopland/CMS---Python-Flask");
-                                  if (await canLaunchUrl(url)) {
-                                    await launchUrl(url);
-                                  }
-                                },
-                              )
-                            ],
+                          SizedBox(
+                            width: 600,
+                            child: const Text(
+                              "This CMS lets users create folders, upload, edit and delete files, post and delete comments, categorize files based on tags, and search for files. When uploading a file, the user can decide whether to make the file accessible for all, or only registered users. Email verification is used to verify users registering for an account. The focus on this project was database design, backend development, security and authentication.",
+                              style: TextStyle(
+                                  color: Colors.white, fontSize: 16, height: 1.6),
+                              textAlign: TextAlign.end,
+                            ),
                           ),
-                        ),
-                      ],
+                          Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 16.0),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              children: [
+                                CTAButton1(
+                                  text: "Live Demo",
+                                  onPressed: () async {
+                                    final url = Uri.parse(
+                                        "https://kark.uit.no/~kpe144/flask_prosjekt/home");
+                                    if (await canLaunchUrl(url)) {
+                                      await launchUrl(url);
+                                    }
+                                  },
+                                ),
+                                const SizedBox(
+                                  width: 32,
+                                ),
+                                CTAButton2(
+                                  text: "View the code",
+                                  onPressed: () async {
+                                    final url = Uri.parse(
+                                        "https://github.com/joffenhopland/CMS---Python-Flask");
+                                    if (await canLaunchUrl(url)) {
+                                      await launchUrl(url);
+                                    }
+                                  },
+                                )
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
                     )
                   ],
                 ),
