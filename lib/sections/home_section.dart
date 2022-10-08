@@ -16,7 +16,7 @@ class _HomeSectionState extends State<HomeSection> {
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (context, constraints) {
-        if (constraints.maxWidth < 850) {
+        if (constraints.maxWidth < 945) {
           return Container(
             decoration: const BoxDecoration(
                 gradient: LinearGradient(
