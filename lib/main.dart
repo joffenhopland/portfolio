@@ -4,11 +4,13 @@ import 'package:google_fonts/google_fonts.dart';
 import 'home_page.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  MyApp({super.key});
+  final anchorScrollKey = GlobalKey();
+
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +23,7 @@ class MyApp extends StatelessWidget {
         ),
         primarySwatch: Colors.blue,
       ),
-      home: const HomePage(),
+      home:   HomePage(anchorScrollKey: anchorScrollKey),
     );
   }
 }
