@@ -34,7 +34,7 @@ class _ProjectsSectionState extends State<ProjectsSection> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.all(40),
+                padding: const EdgeInsets.symmetric(vertical: 40, horizontal: 16),
                 child: Column(
                   children: [
                     ClipRRect(
@@ -53,10 +53,10 @@ class _ProjectsSectionState extends State<ProjectsSection> {
                             padding: EdgeInsets.only(right: 4.0),
                             child: TextContainer(text: "  Javacript  "),
                           ),
-                          Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 4.0),
-                            child: TextContainer(text: "  Bootstrap  "),
-                          ),
+                          // Padding(
+                          //   padding: EdgeInsets.symmetric(horizontal: 4.0),
+                          //   child: TextContainer(text: "  Bootstrap  "),
+                          // ),
                           Padding(
                             padding: EdgeInsets.symmetric(horizontal: 4.0),
                             child: TextContainer(text: "  MongoDB  "),
@@ -131,7 +131,7 @@ class _ProjectsSectionState extends State<ProjectsSection> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.all(40.0),
+                padding: const EdgeInsets.symmetric(vertical: 40, horizontal: 16),
                 child: Column(
                   children: [
                     Column(
@@ -216,7 +216,7 @@ class _ProjectsSectionState extends State<ProjectsSection> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.all(40.0),
+                padding: const EdgeInsets.symmetric(vertical: 40, horizontal: 16),
                 child: Column(
                   children: [
                     Column(

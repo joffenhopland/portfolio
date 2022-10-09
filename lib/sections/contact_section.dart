@@ -182,7 +182,7 @@ class _ContactSectionState extends State<ContactSection> {
     return Form(
         key: _formKey,
         child: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 40),
+          padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16),
           child: Column(
             children: [
               _buildTextField(title: 'Name', controller: controllerName),
