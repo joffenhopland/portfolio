@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 
 import '../common/config.dart';
+import '../home_page.dart';
 
 class EndDrawer extends StatelessWidget {
-  const EndDrawer({Key? key}) : super(key: key);
+  final GlobalKey? anchorScrollKey;
+
+  const EndDrawer({Key? key, required this.anchorScrollKey}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -17,9 +20,11 @@ class EndDrawer extends StatelessWidget {
             textColor: Colors.white,
             title: const Center(child: Text('Home')),
             onTap: () {
-              // Update the state of the app
-              // ...
-              // Then close the drawer
+              if (anchorScrollKey?.currentState != null) {
+                (anchorScrollKey?.currentState
+                as HomePageState)
+                    .scrollToItem(0);
+              }
               Navigator.pop(context);
             },
           ),
@@ -28,6 +33,11 @@ class EndDrawer extends StatelessWidget {
             textColor: Colors.white,
             title: const Center(child: Text('Projects')),
             onTap: () {
+              if (anchorScrollKey?.currentState != null) {
+                (anchorScrollKey?.currentState
+                as HomePageState)
+                    .scrollToItem(1);
+              }
               Navigator.pop(context);
             },
           ),
@@ -44,6 +54,11 @@ class EndDrawer extends StatelessWidget {
             textColor: Colors.white,
             title: const Center(child: Text('Contact')),
             onTap: () {
+              if (anchorScrollKey?.currentState != null) {
+                (anchorScrollKey?.currentState
+                as HomePageState)
+                    .scrollToItem(2);
+              }
               Navigator.pop(context);
             },
           ),

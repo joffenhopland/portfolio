@@ -3,9 +3,12 @@ import 'package:joffen_hopland_portfolio/common/config.dart';
 import 'package:joffen_hopland_portfolio/common_widgets/cta_button_2.dart';
 
 import '../common_widgets/cta_button_1.dart';
+import '../home_page.dart';
 
 class HomeSection extends StatefulWidget {
-  const HomeSection({Key? key}) : super(key: key);
+  final GlobalKey? anchorScrollKey;
+
+  const HomeSection({Key? key, required this.anchorScrollKey}) : super(key: key);
 
   @override
   State<HomeSection> createState() => _HomeSectionState();
@@ -115,11 +118,23 @@ class _HomeSectionState extends State<HomeSection> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          CTAButton1(text: "View Projects", onPressed: () {  },),
+                          CTAButton1(text: "View Projects", onPressed: () {
+                            if (widget.anchorScrollKey?.currentState != null) {
+                              (widget.anchorScrollKey?.currentState
+                              as HomePageState)
+                                  .scrollToItem(1);
+                            }
+                          },),
                           const SizedBox(
                             width: 32,
                           ),
-                          CTAButton2(text: "Contact Me", onPressed: () {  },)
+                          CTAButton2(text: "Contact Me", onPressed: () {
+                            if (widget.anchorScrollKey?.currentState != null) {
+                              (widget.anchorScrollKey?.currentState
+                              as HomePageState)
+                                  .scrollToItem(2);
+                            }
+                          },)
                         ],
                       ),
                     )
@@ -186,11 +201,23 @@ class _HomeSectionState extends State<HomeSection> {
                       padding: const EdgeInsets.symmetric(vertical: 24.0),
                       child: Row(
                         children: [
-                          CTAButton1(text: "View Projects", onPressed: () {  },),
+                          CTAButton1(text: "View Projects", onPressed: () {
+                            if (widget.anchorScrollKey?.currentState != null) {
+                              (widget.anchorScrollKey?.currentState
+                              as HomePageState)
+                                  .scrollToItem(1);
+                            }
+                          },),
                           const SizedBox(
                             width: 32,
                           ),
-                          CTAButton2(text: "Contact Me", onPressed: () {  },)
+                          CTAButton2(text: "Contact Me", onPressed: () {
+                            if (widget.anchorScrollKey?.currentState != null) {
+                              (widget.anchorScrollKey?.currentState
+                              as HomePageState)
+                                  .scrollToItem(2);
+                            }
+                          },)
                         ],
                       ),
                     )

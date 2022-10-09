@@ -1,18 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:joffen_hopland_portfolio/common/config.dart';
 import 'package:joffen_hopland_portfolio/home_page.dart';
 
-class AppBarItems extends StatefulWidget {
+class AppBarItems extends StatelessWidget {
   final GlobalKey? anchorScrollKey;
 
   const AppBarItems({Key? key, required this.anchorScrollKey})
       : super(key: key);
 
-  @override
-  State<AppBarItems> createState() => _AppBarItemsState();
-}
-
-class _AppBarItemsState extends State<AppBarItems> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -37,8 +31,8 @@ class _AppBarItemsState extends State<AppBarItems> {
                           textStyle: const TextStyle(
                               fontSize: 16, fontWeight: FontWeight.bold)),
                       onPressed: () {
-                        if (widget.anchorScrollKey?.currentState != null) {
-                          (widget.anchorScrollKey?.currentState
+                        if (anchorScrollKey?.currentState != null) {
+                          (anchorScrollKey?.currentState
                                   as HomePageState)
                               .scrollToItem(0);
                         }
@@ -54,8 +48,8 @@ class _AppBarItemsState extends State<AppBarItems> {
                           textStyle: const TextStyle(
                               fontSize: 16, fontWeight: FontWeight.bold)),
                       onPressed: () {
-                        if (widget.anchorScrollKey?.currentState != null) {
-                          (widget.anchorScrollKey?.currentState
+                        if (anchorScrollKey?.currentState != null) {
+                          (anchorScrollKey?.currentState
                                   as HomePageState)
                               .scrollToItem(1);
                         }
@@ -78,8 +72,8 @@ class _AppBarItemsState extends State<AppBarItems> {
                           textStyle: const TextStyle(
                               fontSize: 16, fontWeight: FontWeight.bold)),
                       onPressed: () {
-                        if (widget.anchorScrollKey?.currentState != null) {
-                          (widget.anchorScrollKey?.currentState
+                        if (anchorScrollKey?.currentState != null) {
+                          (anchorScrollKey?.currentState
                                   as HomePageState)
                               .scrollToItem(2);
                         }
