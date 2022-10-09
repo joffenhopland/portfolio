@@ -24,7 +24,7 @@ class HomePageState extends State<HomePage> {
 
   Future scrollToItem(index) async {
     itemScrollController.scrollTo(
-        index: index, duration: Duration(milliseconds: 250));
+        index: index, duration: const Duration(milliseconds: 250));
   }
 
   @override
