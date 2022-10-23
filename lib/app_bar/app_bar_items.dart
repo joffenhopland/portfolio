@@ -57,13 +57,23 @@ class AppBarItems extends StatelessWidget {
                       child: const Text("Projects"),
                     ),
                   ),
-                  /*Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 16.0),
-                    child: Text(
-                      "About",
-                      style: TextStyle(color: Colors.white, fontSize: 16),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                    child: TextButton(
+                      style: TextButton.styleFrom(
+                          foregroundColor: Colors.white,
+                          textStyle: const TextStyle(
+                              fontSize: 16, fontWeight: FontWeight.bold)),
+                      onPressed: () {
+                        if (anchorScrollKey?.currentState != null) {
+                          (anchorScrollKey?.currentState
+                          as HomePageState)
+                              .scrollToItem(2);
+                        }
+                      },
+                      child: const Text("About"),
                     ),
-                  ),*/
+                  ),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 16.0),
                     child: TextButton(
@@ -75,7 +85,7 @@ class AppBarItems extends StatelessWidget {
                         if (anchorScrollKey?.currentState != null) {
                           (anchorScrollKey?.currentState
                                   as HomePageState)
-                              .scrollToItem(2);
+                              .scrollToItem(3);
                         }
                       },
                       child: const Text("Contact"),

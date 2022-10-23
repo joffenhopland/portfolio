@@ -41,14 +41,19 @@ class EndDrawer extends StatelessWidget {
               Navigator.pop(context);
             },
           ),
-         /* ListTile(
+          ListTile(
             hoverColor: themeColor,
             textColor: Colors.white,
             title: const Center(child: Text('About')),
             onTap: () {
+              if (anchorScrollKey?.currentState != null) {
+                (anchorScrollKey?.currentState
+                as HomePageState)
+                    .scrollToItem(2);
+              }
               Navigator.pop(context);
             },
-          ),*/
+          ),
           ListTile(
             hoverColor: themeColor,
             textColor: Colors.white,
@@ -57,7 +62,7 @@ class EndDrawer extends StatelessWidget {
               if (anchorScrollKey?.currentState != null) {
                 (anchorScrollKey?.currentState
                 as HomePageState)
-                    .scrollToItem(2);
+                    .scrollToItem(3);
               }
               Navigator.pop(context);
             },

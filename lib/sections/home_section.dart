@@ -132,7 +132,7 @@ class _HomeSectionState extends State<HomeSection> {
                             if (widget.anchorScrollKey?.currentState != null) {
                               (widget.anchorScrollKey?.currentState
                               as HomePageState)
-                                  .scrollToItem(2);
+                                  .scrollToItem(3);
                             }
                           },)
                         ],
@@ -215,7 +215,7 @@ class _HomeSectionState extends State<HomeSection> {
                             if (widget.anchorScrollKey?.currentState != null) {
                               (widget.anchorScrollKey?.currentState
                               as HomePageState)
-                                  .scrollToItem(2);
+                                  .scrollToItem(3);
                             }
                           },)
                         ],

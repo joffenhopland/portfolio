@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:joffen_hopland_portfolio/common/config.dart';
 import 'package:joffen_hopland_portfolio/drawers/end_drawer.dart';
+import 'package:joffen_hopland_portfolio/sections/about_section.dart';
 import 'package:joffen_hopland_portfolio/sections/contact_section.dart';
 import 'package:joffen_hopland_portfolio/sections/home_section.dart';
 import 'package:joffen_hopland_portfolio/sections/projects_section.dart';
@@ -34,6 +35,7 @@ class HomePageState extends State<HomePage> {
         anchorScrollKey: widget.anchorScrollKey,
       ),
       const ProjectsSection(),
+      AboutSection(anchorScrollKey: widget.anchorScrollKey,),
       const ContactSection()
     ];
     super.initState();
