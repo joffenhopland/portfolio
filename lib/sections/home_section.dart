@@ -112,6 +112,7 @@ class _HomeSectionState extends State<HomeSection> {
                         ),
                         textAlign: TextAlign.center,
                       ),
+
                     ),
                     Padding(
                       padding: const EdgeInsets.only(top: 16.0, bottom: 48),
